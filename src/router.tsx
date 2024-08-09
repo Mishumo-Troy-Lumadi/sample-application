@@ -6,10 +6,12 @@ import Header from "./components/header";
 
 export const router = createBrowserRouter(createRoutesFromElements(
     <Route element={
-        <>
+        <div className="w-screen h-screen flex flex-col divide-y overflow-hidden">
             <Header />
-            <Outlet />
-        </>
+            <div className="w-full flex-auto">
+                <Outlet />
+            </div>
+        </div>
     }>
         <Route index element={<Landing />} />
         <Route path="auth">
